@@ -1,4 +1,5 @@
 html, body {
+  text-transform: uppercase;
   cursor: url('/images/default.png'), auto; /* Custom cursor */
   margin: 0;
   height: 100%;
@@ -8,8 +9,13 @@ html, body {
 body {
   background-color: black;
   color: white;
-  font-size: 14px;
-  font-family: Verdana, Arial, sans-serif;
+  font-size: 22px;
+  font-family: 'CustomFont', fallback-fonts;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('DK-Lemon-Yellow-Sun.woff') format('woff');
 }
 
 div {
@@ -19,12 +25,34 @@ div {
   transform: translate(-50%, -50%);
 }
 
-.name {
-    width: 1000px;
-    height: 500px;
+.socials {
+  background-color: lightblue;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed; /* Keeps the buttons fixed in the viewport */
+  left: 50%; /* Adjust as needed */
+  top: 10%; /* Adjust as needed */
+  transform: translateX(-50%); /* Centers the buttons horizontally */
+  z-index: 2; /* Ensures buttons are above other content */
 }
 
-iframe {
+/* Ensure the z-index of other elements is lower than the buttons */
+.main-content, .background-video, .blur-overlay {
+  z-index: 1;
+}
+
+
+.name {
+    width: 1800px;
+    display: justify;
+    justify-content: space evenly;
+    height: 50vh; /* Adjust as needed */
+    text-align: left;
+    max-width: 90%; /* Or a suitable percentage */
+    margin: auto; /* Centers the container */
+}
+
+video {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,7 +71,7 @@ iframe {
 
 .blur-overlay {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .main-content {
@@ -51,13 +79,19 @@ iframe {
     z-index: 1; /* Above the overlay */
 }
 
-
-
 h1{
 
 
 }
 
-h2{
-
+h2 {
+  text-align: left;
+  font-size: 3vw; /* Adjust as needed */
+  background-color: black; /* Your desired background color */
+  padding: 5px; /* Adjust padding as needed */
+  display: inline-block; /* Makes the background wrap around the text */
+  margin-bottom: 10px; /* Adds space between each line */
+  color: white; /* Text color */
+  /* Add any other desired styling */
 }
+
