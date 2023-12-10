@@ -1,3 +1,7 @@
+:root{
+    --clr-neon: hsl(136 100% 53%);
+}
+
 html, body {
   text-transform: uppercase;
   cursor: url('/images/default.png'), auto; /* Custom cursor */
@@ -15,25 +19,91 @@ body {
 
 @font-face {
   font-family: 'CustomFont';
-  src: url('DK-Lemon-Yellow-Sun.woff') format('woff');
+  src: url('../EightBitDragon-anqx.woff') format('woff');
 }
 
 div {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  left: 10%;
+  top: 30%;
 }
 
 .socials {
-  background-color: lightblue;
-  display: flex;
-  justify-content: space-evenly;
-  position: fixed; /* Keeps the buttons fixed in the viewport */
-  left: 50%; /* Adjust as needed */
+  left: 15%;
+  width: 1500px; /* Or any other fixed width */
+  height: 60px; /* Or any other fixed height */
+
+  justify-content: center; /* This will center the buttons within the .socials container */
+  position: relative; /* Adjust if needed, could be absolute or fixed depending on layout */
+  z-index: 2; /* Ensures buttons are above other content */
+}
+
+.neon-button {
+  margin: 0 3em;
+  text-align: center;
+  font-family: 'CustomFont', fallback-fonts;
+  cursor: pointer;
+  font-size: 2rem; /* Text size */
+  display: inline-block;
+  color: var(--clr-neon);
+  background-color: black;
+  justify-content: center;
+  position: relative; /* Keeps the buttons fixed in the viewport */
+  left: 20%; /* Adjust as needed */
   top: 10%; /* Adjust as needed */
   transform: translateX(-50%); /* Centers the buttons horizontally */
   z-index: 2; /* Ensures buttons are above other content */
+  border-radius: .25em; /* Rounded corners */
+  text-decoration: none;
+  border: var(--clr-neon) 0.125em solid;
+  padding: .25em 1.5em;
+  text-shadow: 0 0 0.5em hsl(0 0% 100% / 0.5), 0 0 0.45em var(--clr-neon);
+  box-shadow: inset 0 0 0.345em var(--clr-neon), 0 0 0.345em var(--clr-neon);
+
+  transition: background-color 200ms linear;
+}
+
+.neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(0.9em) rotateX(10deg) scale(1, 0.3);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+
+.neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    transition: opacity 200ms linear;
+}
+
+.neon-button:hover::before,
+.neon-button:focus {
+    opacity: 1;
+}
+
+.neon-button:hover::after,
+.neon-button:focus {
+    opacity: 1;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+    background: var(--clr-neon);
+    color: black;
+    text-shadow: none;
 }
 
 /* Ensure the z-index of other elements is lower than the buttons */
@@ -43,13 +113,7 @@ div {
 
 
 .name {
-    width: 1800px;
-    display: justify;
-    justify-content: space evenly;
-    height: 50vh; /* Adjust as needed */
-    text-align: left;
-    max-width: 90%; /* Or a suitable percentage */
-    margin: auto; /* Centers the container */
+
 }
 
 video {
@@ -66,16 +130,25 @@ video {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: -1; /* behind content */
+  z-index: 0; /* behind content */
 }
 
 .blur-overlay {
-    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 100px; /* Distance from the top of the viewport */
+    left: 0px; /* Distance from the left side of the viewport */
+    width: 1.5em; /* Or any other fixed width */
+    height: 3000px; /* Or any other fixed height */
+    backdrop-filter: blur(3px);
     background: rgba(255, 255, 255, 0.01);
 }
 
 .main-content {
     position: relative;
+    top: 0px; /* Distance from the top of the viewport */
+    left: -100px; /* Distance from the left side of the viewport */
+    width: 2000px; /* Or any other fixed width */
+    height: 1400px; /* Or any other fixed height */
     z-index: 1; /* Above the overlay */
 }
 
@@ -86,12 +159,27 @@ h1{
 
 h2 {
   text-align: left;
-  font-size: 3vw; /* Adjust as needed */
+  font-size: 4vw; /* Adjust as needed */
   background-color: black; /* Your desired background color */
-  padding: 5px; /* Adjust padding as needed */
-  display: inline-block; /* Makes the background wrap around the text */
+  padding: 25px; /* Adjust padding as needed */
+  display: block; /* Makes the background wrap around the text */
   margin-bottom: 10px; /* Adds space between each line */
   color: white; /* Text color */
   /* Add any other desired styling */
 }
 
+.text-block {
+  text-shadow: 0 0 5px gray, 5px 5px 4px blue, -5px -5px 4px red, 0 -1px white;
+  left: 25%;
+  top: 30%;
+  width: 100%;
+  position: relative;
+  font-size: 3vw; /* Adjust as needed */
+  text-align: left;
+  background-color: black;
+  color: white;
+  padding: 10px 20px; /* Add padding inside each text block */
+  margin-bottom: 15px; /* Adds space between blocks */
+  display: inline-block; /* Each div is already a block-level element */
+  /* Additional styling */
+}
