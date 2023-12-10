@@ -5,4 +5,5 @@ window.addEventListener('mousemove', function(e) {
   customCursor.style.top = e.clientY + 'px';
   customCursor.style.display = 'block';
 });
+
 </script>
