@@ -52,9 +52,9 @@ html, body {
   padding: .25em 1.5em;
   text-shadow: 0 0 0.5em hsl(0 0% 100% / 0.5), 0 0 0.45em var(--clr-neon);
   box-shadow: inset 0 0 0.345em var(--clr-neon), 0 0 0.345em var(--clr-neon);
-
-  transition: background-color 600ms linear;
   isolation: isolate;
+
+  /*added */
 }
 
 .neon-button::before {
@@ -81,7 +81,8 @@ html, body {
     box-shadow: 0 0 2em 0.5em var(--clr-neon);
     opacity: 0;
     scale: 0 1;
-    transition: scale 1s;
+    transition: scale 2s ease-out;
+
     z-index: -1;
     inset: 0;
 }
@@ -89,6 +90,9 @@ html, body {
 .neon-button:hover::before,
 .neon-button:focus {
     opacity: 1;
+      /*added */
+
+
 }
 
 .neon-button:hover::after,
@@ -96,6 +100,7 @@ html, body {
     opacity: 1;
     scale: 1 1;
 }
+
 
 @keyframes pulsate-glow {
   0%, 100% {
@@ -125,6 +130,8 @@ html, body {
     color: black;
     text-shadow: none;
     animation: pulsate-glow 2s ease-in-out infinite;
+    animation-delay: 800ms; /* This will delay the start of the pulsating glow */
+
 }
 
 /* Ensure the z-index of other elements is lower than the buttons */
