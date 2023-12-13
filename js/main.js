@@ -29,6 +29,7 @@ function closeContact(contact) {
     overlay.classList.remove('active');
 }
 
+/*
 const img = new Image();
 img.src = "../images/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg";
 const canvasXSize = 4000;
@@ -71,4 +72,5 @@ function draw(y) {
 
   ctx.drawImage(img, 0, y, imgW, imgH);
 }
+*/
 

@@ -1,13 +1,17 @@
 :root{
-    --clr-neon: hsl(17 100% 56%);
+    --clr-neon: hsl(304 91% 57%);
 }
 
 html, body {
-  text-transform: uppercase;
-  margin: 0;
   height: 100%;
   width: 100%;
-  background-color: black;
+  margin: 0;
+  padding: 0;
+  background: rgb(4,2,53);
+  background: linear-gradient(176deg, rgba(4,2,53,1) 7%, rgba(5,3,65,1) 12%, rgba(6,5,85,1) 20%, rgba(7,6,92,1) 23%, rgba(9,9,121,1) 35%, rgba(9,18,127,1) 38%, rgba(8,34,137,1) 43%, rgba(7,53,150,1) 49%, rgba(7,65,158,1) 53%, rgba(5,106,185,1) 66%, rgba(4,122,195,1) 71%, rgba(4,134,203,1) 75%, rgba(3,153,216,1) 81%, rgba(2,165,224,1) 85%, rgba(1,178,232,1) 89%, rgba(1,184,236,1) 91%, rgba(1,193,242,1) 94%, rgba(0,212,255,1) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  text-transform: uppercase;
   color: white;
   font-size: 1em;
   font-family: 'DM Sans', sans-serif;
@@ -20,21 +24,22 @@ html, body {
 .header {
     display: flex;
     justify-content: center;
+    align-items: center; /* Add this to vertically align the content */
     position: fixed; /* Fixed position to keep it at the top */
-    top: 0%;
+    top: 0;
     left: 0;
     width: 100%;
      /* Match the body's background */
     z-index: 10; /* Above other content */
     padding: 5rem 0rem; /* Adjust padding to your preference */
-    background-color: black;
+    background-color: rgb(4,2,53);
 }
 
 .socials {
   display: flex;
   justify-content: center; /* This will center the buttons within the .socials container */
-  position: absolute;
-  top: 10%;
+  position: fixed;
+  top: 3%;
   left: 45%;
   transform: translateX(-50%);
 }
