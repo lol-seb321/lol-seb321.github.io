@@ -17,6 +17,26 @@ html, body {
   font-family: 'DM Sans', sans-serif;
 }
 
+/* Styles for tablets */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* slightly smaller font-size for tablets */
+    }
+    /* Other responsive styles for tablets */
+}
+
+/* Styles for mobile devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* even smaller font-size for mobile */
+    }
+    .neon-button {
+        padding: 10px; /* smaller padding for buttons */
+        font-size: 1rem; /* smaller font-size for buttons */
+    }
+    /* Other responsive styles for mobile */
+}
+
 @font-face {
   font-family: 'DM Sans';
 }
@@ -183,7 +203,7 @@ video {
 .main-content {
     position: absolute;
     top: 20%; /* Distance from the top of the viewport */
-    left: -5%; /* Distance from the left side of the viewport */
+    left: -25px;
     width: 2000px;
     z-index: 1; /* Above the overlay */
 
