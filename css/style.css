@@ -40,7 +40,7 @@ html, body {
   justify-content: center; /* This will center the buttons within the .socials container */
   position: fixed;
   top: 3%;
-  left: 50%;
+  left: 47%;
   transform: translateX(-50%);
 }
 
