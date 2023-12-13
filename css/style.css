@@ -19,19 +19,36 @@ html, body {
 
 /* Styles for tablets */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px; /* slightly smaller font-size for tablets */
+    .contact {
+        width: 80%; /* Adjusted width for tablets */
+        padding: 1rem; /* Adjusted padding */
+        max-width: 600px; /* Maximum width */
+    }
+
+    .main-content {
+        width: 90%; /* Adjusted width for tablets */
+        padding: 1rem; /* Adjusted padding */
+        margin: 0 auto; /* Centering */
     }
     /* Other responsive styles for tablets */
 }
 
 /* Styles for mobile devices */
 @media (max-width: 480px) {
-    body {
-        font-size: 12px; /* even smaller font-size for mobile */
+    .contact {
+        width: 95%; /* Adjusted width for mobile devices */
+        padding: 0.5rem; /* Adjusted padding */
+        max-width: 400px; /* Maximum width */
     }
+
+    .main-content {
+        width: 95%; /* Adjusted width for mobile devices */
+        padding: 0.5rem; /* Adjusted padding */
+        margin: 0 auto; /* Centering */
+    }
+
     .neon-button {
-        padding: 10px; /* smaller padding for buttons */
+        padding: 0.5rem; /* smaller padding for buttons */
         font-size: 1rem; /* smaller font-size for buttons */
     }
     /* Other responsive styles for mobile */
