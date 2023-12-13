@@ -1,40 +1,50 @@
 :root{
-    --clr-neon: hsl(136 100% 53%);
+    --clr-neon: hsl(17 100% 56%);
 }
 
 html, body {
   text-transform: uppercase;
-  cursor: url('/images/mousePointer.png'), auto; /* Custom cursor */
   margin: 0;
   height: 100%;
   width: 100%;
   background-color: black;
   color: white;
-  font-size: 16px;
-  font-family: 'CustomFont', fallback-fonts;
+  font-size: 1em;
+  font-family: 'DM Sans', sans-serif;
 }
 
 @font-face {
-  font-family: 'CustomFont';
-  src: url('../EightBitDragon-anqx.woff') format('woff');
+  font-family: 'DM Sans';
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: fixed; /* Fixed position to keep it at the top */
+    top: 0%;
+    left: 0;
+    width: 100%;
+     /* Match the body's background */
+    z-index: 10; /* Above other content */
+    padding: 5rem 0rem; /* Adjust padding to your preference */
+    background-color: black;
 }
 
 .socials {
   display: flex;
   justify-content: center; /* This will center the buttons within the .socials container */
   position: absolute;
-  top: 20%;
-  left: 43%;
-  transform: translate(-50%, -50%);
-  z-index: 2; /* Ensures buttons are above other content */
+  top: 10%;
+  left: 45%;
+  transform: translateX(-50%);
 }
 
 .neon-button {
   width: 300px; /* Fixed width */
-  height: 30px; /* Fixed height */
-  margin: 0 3em;
+  height: 35px; /* Fixed height */
+  margin: 0 1em;
   text-align: center;
-  font-family: 'CustomFont', fallback-fonts;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   font-size: 2rem; /* Text size */
   display: inline-block;
@@ -53,8 +63,6 @@ html, body {
   text-shadow: 0 0 0.5em hsl(0 0% 100% / 0.5), 0 0 0.45em var(--clr-neon);
   box-shadow: inset 0 0 0.345em var(--clr-neon), 0 0 0.345em var(--clr-neon);
   isolation: isolate;
-
-  /*added */
 }
 
 .neon-button::before {
@@ -81,8 +89,7 @@ html, body {
     box-shadow: 0 0 2em 0.5em var(--clr-neon);
     opacity: 0;
     scale: 0 1;
-    transition: scale 2s ease-out;
-
+    transition: scale 1s ease-in-out;
     z-index: -1;
     inset: 0;
 }
@@ -90,9 +97,6 @@ html, body {
 .neon-button:hover::before,
 .neon-button:focus {
     opacity: 1;
-      /*added */
-
-
 }
 
 .neon-button:hover::after,
@@ -173,7 +177,7 @@ video {
 
 .main-content {
     position: absolute;
-    top: 40%; /* Distance from the top of the viewport */
+    top: 20%; /* Distance from the top of the viewport */
     left: -5%; /* Distance from the left side of the viewport */
     width: 2000px;
     z-index: 1; /* Above the overlay */
@@ -214,4 +218,76 @@ h2 {
   margin-bottom: 15px; /* Adds space between blocks */
   display: inline-block; /* Each div is already a block-level element */
   /* Additional styling */
+}
+
+.contact {
+    color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%; /*size of screen*/
+    transform: translate(-50%, -50%) scale(0); /*size of container*/
+    transition: 400ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.contact.active {
+    transform: translate(-50%, -50%) scale(1); /*size of container*/
+}
+
+.contact-header {
+
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom 1px solid black;
+}
+
+.contact-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.contact-header .close-button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.contact-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 400ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#canvas {
+  display: block; /* Removes the margin around the canvas */
+  position: fixed; /* Fixes the canvas in place */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* 100% of the viewport height */
+  z-index: 1; /* Positions the canvas behind your content */
 }

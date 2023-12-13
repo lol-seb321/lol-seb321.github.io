@@ -10,28 +10,37 @@
 
 </head>
 <body class="cursor-default" channel="0">
-    <!-- Background video -->
-    <video autoplay muted loop id="myVideo">
-        <source src="images/hackerBroll.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
 
-    <!-- Blur overlay -->
-    <div class="blur-overlay"></div>
+<canvas id="canvas" width="4000" height="6000"
+>Yosemite National Park, meadow at the base of El Capitan</canvas>
 
     <!-- Main content -->
+    <div class="header">
     <div class="socials">
         <a href="#" id="Resume" class="neon-button">Resume</a>
-        <a href="#" id="Email" class="neon-button">Email</a>
-        <a href="#" id="LinkedIn" class="neon-button">LinkedIn</a>
+        <a href="#" data-contact-target="#contact" class="neon-button">Contact</a>
+        <a href="https://www.linkedin.com/in/sebastian-ferreira-570961193/" class="neon-button">LinkedIn</a>
     </div>
+    </div>
+
+    <div id="contact" class="contact">
+        <div class="contact-header">
+            <div class="title">My contact information:</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="contact-body">
+            Email: sjferreira.99@gmail.com or se4138078@ucf.edu
+        </div>
+    </div>
+
+    <div id="overlay"></div>
 
     <div class="main-content">
         <img src="/images/default.png" id="custom-cursor" style="position: absolute; display: none;" />
         <div class="text-block">HELLO! I'M SEBASTIAN FERREIRA, I HAVE</div>
         <div class="text-block">TWO, YEARS OF IT EXPERIENCE FROM UCF.</div>
         <div class="text-block">I AM KNOWLEDGEABLE IN JAVA, C, MYSQL,</div>
-        <div class="text-block">HTML, CSS, JS, AND JSP WITH A</div>
+        <div class="text-block">HTML, CSS, JS, REACT AND JSP WITH A</div>
         <div class="text-block">CYBERSECURITY FOCUSED MIND.</div><br><br><br><br><br><br>
         <div class="text-block">I'VE HAD SUCCESS IN PROGRAMMING AND</div>
         <div class="text-block">LEARNING NEW LANGUAGES AND I'M</div>
